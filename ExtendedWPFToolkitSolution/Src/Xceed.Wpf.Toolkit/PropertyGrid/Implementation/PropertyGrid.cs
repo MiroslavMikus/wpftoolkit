@@ -38,7 +38,11 @@ namespace Xceed.Wpf.Toolkit.PropertyGrid
   [StyleTypedProperty( Property = "PropertyContainerStyle", StyleTargetType = typeof( PropertyItemBase ) )]
   public class PropertyGrid : Control, ISupportInitialize, IPropertyContainer, INotifyPropertyChanged
   {
-    private const string PART_DragThumb = "PART_DragThumb";
+    public static List<string> ExpandableObjectStringFilter { get; } = new List<string>()
+    {
+        "System"
+    };
+        private const string PART_DragThumb = "PART_DragThumb";
     internal const string PART_PropertyItemsControl = "PART_PropertyItemsControl";
     private static readonly ComponentResourceKey SelectedObjectAdvancedOptionsMenuKey = new ComponentResourceKey( typeof( PropertyGrid ), "SelectedObjectAdvancedOptionsMenu" );
 
